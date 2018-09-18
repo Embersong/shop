@@ -3,19 +3,19 @@
     <head>
     <meta charset="utf-8">
         <title>Интернет-магазин ноутбуков {{ title }}</title>
-        <link rel="stylesheet" href="/geekbrains/public/css/styles.css" type="text/css" media="all">
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all">
    </head>
 <body>
 <div class="auth-block">
      {% if isAuth == false %}
         Введите пароль:
-        <form action="/geekbrains/public/auth/login/" method="POST">
+        <form action="/auth/login/" method="POST">
             <input type="text" name="login" placeholder="Login">
             <input type="password" name="pass" placeholder="Pass">
             <input type="submit" name="submit" value="Войти">
         </form>
         {% else %}
-            Добро пожаловать {{ isAuth }} <a href="/geekbrains/public/auth/logout/">Выход</a>!
+            Добро пожаловать {{ isAuth }} <a href="/auth/logout/">Выход</a>!
         {% endif %}
 </div>
 <div id="container">
