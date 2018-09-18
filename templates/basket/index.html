@@ -1,0 +1,8 @@
+{% include 'header.html' %}
+<h2>Ваша корзина:</h2>
+{% for item in content_data.goods %}
+      {{ item.name }} стоимость: {{ item.price }}<br>
+      {% endfor %}<br>
+	  Всего товаров на сумму: {{content_data.price}}
+{% include 'footer.html' %}
+

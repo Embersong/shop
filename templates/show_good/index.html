@@ -1,0 +1,13 @@
+{% include 'header.html' %}
+<h2>Товар: {{ content_data.good.name }}</h2>
+<div class='item'>
+        <form action='buy.php' method='GET'>
+            <img src='/geekbrains/public/img/small/{{content_data.good.image}}'/>
+            <h3 class='item-name'>{{ content_data.good.name }}</h3>
+            <p class='price'>{{ content_data.good.price }}</p>
+            <input class='add-to-basket' type='submit' value='Купить'>
+            <input hidden type='text' name='id_good' value='{{ content_data.good.id_good }}'>
+        </form>
+</div>
+{% include 'footer.html' %}
+

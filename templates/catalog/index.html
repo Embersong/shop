@@ -1,0 +1,17 @@
+{% include 'header.html' %}
+<h2>Каталог товаров:</h2>
+    <ul>
+      {% for item in content_data.catalog %}
+        <div class='item'>
+				<form action='/geekbrains/public/basket/buy/' method='POST'>
+                    <a href="/geekbrains/public/show_good/?idx={{ item.id_good }}"><img src='/geekbrains/public/img/small/{{item.image}}'></a>
+                    <h3 class='item-name'><a href="/geekbrains/public/show_good/?idx={{ item.id_good }}">{{ item.name }}</a></h3>
+                    <p class='price'>{{ item.price }}</p>
+                    <input class='add-to-basket' type='submit' value='Купить'>
+					<input hidden type='text' name='id_good' value='{{ item.id_good }}'>
+				</form>
+		</div>
+      {% endfor %}
+   </ul> 
+{% include 'footer.html' %}
+
